@@ -5,8 +5,6 @@
 
 <h3 align="center">Sparkify Datalake</h3>
 
-<div align="center">
-[![Status](https://img.shields.io/badge/status-active-success.svg)]() [![GitHub Issues](https://img.shields.io/github/issues/kellermann92/sparkify-lake.svg)](https://github.com/kellermann92/sparkify-lake/issues) [![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kellermann92/sparkify-lake.svg)](https://github.com/kellermann92/sparkify-lake/pulls) [![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
 
 
 
@@ -22,7 +20,7 @@
 
 - [Table of Contents](#-table-of-contents)
 - [About ](#about)
-- [Technologies](#technologies) 
+- [Technologies](#technologies)
 - [Getting Started ](#getting_started)
   - [Prerequisites](#prerequisites)
   - [Installing](#installing)
@@ -119,7 +117,7 @@ erDiagram
 	songplaysView |o--o{ artists: is
 	songplaysView |o--o{ songs: is
 	logDataNextSongView |o--o| songplays: is
-	
+
     log_data{
       Long sessionId PK
     	String itemInSession PK
@@ -140,7 +138,7 @@ erDiagram
    	 	Integer status
     	String userAgent
     }
-    
+
     time{
     	Decimal[20][0] ts PK
     	String[Date] start_time
@@ -150,7 +148,7 @@ erDiagram
     	TinyInt week
     	TinyInt weekday
     }
-    
+
     logDataNextSongView{
     	Long sessionId PK
     	String itemInSession PK
@@ -170,7 +168,7 @@ erDiagram
     	Integer status
     	String userAgent
     }
-    
+
     userslevel{
     	String user_id PK
     	Decimal[20][0] ts PK
@@ -179,7 +177,7 @@ erDiagram
     	String gender
    		String level
     }
-    
+
     song_data{
     	String song_id PK
     	String artist_id FK
@@ -192,7 +190,7 @@ erDiagram
     	String artist_name
     	Integer num_songs
     }
-    
+
     songs{
     	String song_id PK
     	Decimal[10][5] duration FK
@@ -200,7 +198,7 @@ erDiagram
     	String title FK
     	Integer year
      }
-     
+
     artists{
     	String artist_id PK
     	String artist_name
@@ -208,7 +206,7 @@ erDiagram
     	Decimal[8][5] artist_latitude
     	Decimal[8][5] artist_longitude
     }
-    
+
     songplaysView{
     	Long songplays_id PK
     	String song_id FK
@@ -222,7 +220,7 @@ erDiagram
     	String artist_id
     	Integer year
     }
-    
+
     songplays{
     	Long songplays_id PK
     	String session_id PK
