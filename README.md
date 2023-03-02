@@ -21,7 +21,7 @@
 - [Table of Contents](#-table-of-contents)
 - [About ](#about)
 - [Technologies](#technologies)
-- [Getting Started ](#getting_started)
+- [How execute this project](#howto)
   - [Prerequisites](#prerequisites)
   - [Installing](#installing)
 - [Built Using ](#️-built-using-)
@@ -39,7 +39,7 @@ This project was made using:
 - [sbt 1.8.2](https://www.scala-sbt.org/download.html)
 - [Scala 2.3.10](https://www.scala-lang.org/download/)
 
-## How execute this project?
+## How execute this project?<a name = "howto"></a>
 
 To execute this project you just run the following commands in the root repository:
 
@@ -365,10 +365,4 @@ erDiagram
 ### Generate a functional .JAR file
 
 ### Understand why running with sbt exits with error
-
-
-
-## ✍️ Authors <a name = "authors"></a>
-
-- [@kellermann92](https://github.com/kellermann92) - Idea & Initial work
 
