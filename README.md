@@ -26,10 +26,8 @@ https://user-images.githubusercontent.com/9287209/222537943-0e39b51c-dfb0-49ec-a
 - [About ](#about)
 - [Technologies](#technologies)
 - [How execute this project](#howto)
-  - [Prerequisites](#prerequisites)
-  - [Installing](#installing)
-- [Built Using ](#️-built-using-)
-- [Authors ](#️-authors-)
+- [About the data](#data)
+- [Technical debts](#debts)
 
 
 ## About <a name = "about"></a>
@@ -64,7 +62,7 @@ A successful execution will have the following lines
 
 
 
-## Getting Started <a name = "getting_started"></a>
+## Abuot the data <a name = "data"></a>
 
 The data we will be working on could be stored stored in two `S3` buckets. Let's pretend that this is what happens here :smile:
 * **Log data**: contains users events on platform and have the following format:
@@ -360,7 +358,7 @@ erDiagram
 |    level     |            User tier level            |      String      |
 |  Start_time  | Datetime at which the session started | String[DateTime] |
 
-## Technical debts
+## Technical debts<a name = "debts"></a>
 
 ### Decouple input/output from code.
 
@@ -372,5 +370,4 @@ https://user-images.githubusercontent.com/9287209/222537649-37db7202-0edd-4129-a
 
 
 ### Understand why running with sbt exits with error
-
 
