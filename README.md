@@ -7,6 +7,10 @@
 
 
 
+https://user-images.githubusercontent.com/9287209/222537943-0e39b51c-dfb0-49ec-a2e6-13f19d2bcf3a.mp4
+
+
+
 
 ---
 
@@ -364,5 +368,9 @@ erDiagram
 
 ### Generate a functional .JAR file
 
+https://user-images.githubusercontent.com/9287209/222537649-37db7202-0edd-4129-ac00-56f8b689a25c.mp4
+
+
 ### Understand why running with sbt exits with error
+
 
