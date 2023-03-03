@@ -25,7 +25,7 @@ https://user-images.githubusercontent.com/9287209/222537943-0e39b51c-dfb0-49ec-a
 - [Table of Contents](#-table-of-contents)
 - [About ](#about)
 - [Technologies](#technologies)
-- [How execute this project](#howto)
+- [How to run this project](#howto)
 - [About the data](#data)
 - [Technical debts](#debts)
 
