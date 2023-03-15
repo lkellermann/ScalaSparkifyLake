@@ -17,7 +17,7 @@ class ProcessTimeTable(val session: SparkSession){
     ).createOrReplaceTempView("tmpTimeTable")
   }
 
-  private def createTimeTable(): Unit ={
+  private def createTimeTable(output: String): Unit ={
     this.session.sql(
       """
         |select distinct a.ts
@@ -32,11 +32,11 @@ class ProcessTimeTable(val session: SparkSession){
     ).write
       .mode("overwrite")
       .partitionBy("year", "month")
-      .parquet("output/time")
+      .parquet(output)
   }
 
-  def execute: Unit = {
+  def execute(output: String): Unit = {
     this.createTempView()
-    this.createTimeTable()
+    this.createTimeTable(output)
   }
 }

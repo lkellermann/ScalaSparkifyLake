@@ -3,16 +3,16 @@ import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.functions.monotonically_increasing_id
 
 class ProcessSongplaysTable(session: SparkSession) {
-  private def createSongplaysTempView(): Unit = {
+  private def createSongplaysTempView(inputSongs: String, inputArtists: String): Unit = {
     val dfArtists = this.session
       .read
       .format("parquet")
-      .load("output/artists")
+      .load(inputArtists)
 
     val dfSongs = this.session
       .read
       .format("parquet")
-      .load("output/songs")
+      .load(inputSongs)
 
     dfArtists.join(dfSongs,
       dfArtists("artist_id") <=> dfSongs("artist_id")
@@ -21,11 +21,11 @@ class ProcessSongplaysTable(session: SparkSession) {
       .createOrReplaceTempView("songplaysView")
     }
 
-  private def createSongplays():Unit = {
+  private def createSongplays(inputTime: String, outputSongplays: String):Unit = {
     this.session
       .read
       .format("parquet")
-      .load("output/time")
+      .load(inputTime)
       .createOrReplaceTempView("timeView")
 
     val df = this.session.sql(
@@ -50,11 +50,11 @@ class ProcessSongplaysTable(session: SparkSession) {
 
     df.write
       .mode("overwrite")
-      .parquet("output/songplays")
+      .parquet(outputSongplays)
   }
 
-  def execute: Unit = {
-    createSongplaysTempView()
-    createSongplays()
+  def execute(inputSongs: String, inputArtists: String, inputTime: String, outputSongplays: String): Unit = {
+    createSongplaysTempView(inputSongs, inputArtists)
+    createSongplays(inputTime, outputSongplays)
   }
 }

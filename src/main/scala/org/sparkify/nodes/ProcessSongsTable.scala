@@ -5,7 +5,7 @@ import org.apache.spark.sql.SparkSession
 
 class ProcessSongsTable(session: SparkSession){
   Logger.getLogger("org").setLevel(Level.ERROR)
-  private def createSongTable(): Unit = {
+  private def createSongTable(output: String): Unit = {
     this.session.sql(
       """select distinct song_id
         |   ,title
@@ -17,11 +17,11 @@ class ProcessSongsTable(session: SparkSession){
     )
       .write.mode("overwrite")
       .partitionBy("artist_id", "year")
-      .parquet("output/songs")
+      .parquet(output)
   }
 
-  def execute(): Unit = {
-    createSongTable()
+  def execute(output: String): Unit = {
+    createSongTable(output)
   }
 
 }

@@ -3,7 +3,7 @@ package org.sparkify.nodes
 import org.apache.spark.sql.SparkSession
 
 class ProcessArtistsTable(session: SparkSession) {
-  private def createArtistTable(): Unit = {
+  private def createArtistTable(output: String): Unit = {
     this.session.sql(
         """
           |select distinct artist_id
@@ -16,11 +16,11 @@ class ProcessArtistsTable(session: SparkSession) {
       )
         .write
         .mode("overwrite")
-        .parquet("output/artists")
+        .parquet(output)
     }
 
-  def execute(): Unit = {
-    this.createArtistTable()
+  def execute(output: String): Unit = {
+    this.createArtistTable(output)
   }
   }
 

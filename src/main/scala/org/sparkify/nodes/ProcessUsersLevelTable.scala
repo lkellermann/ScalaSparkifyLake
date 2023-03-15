@@ -5,7 +5,7 @@ import org.apache.spark.sql.SparkSession
 
 class ProcessUsersLevelTable(val session: SparkSession) {
   Logger.getLogger("org").setLevel(Level.ERROR)
-  private def createUsersTable(): Unit = {
+  private def createUsersTable(output: String): Unit = {
     this.session.sql(
       """
         |select userId as user_id
@@ -24,7 +24,7 @@ class ProcessUsersLevelTable(val session: SparkSession) {
         |""".stripMargin
     ).write
      .mode("overwrite")
-     .parquet("output/userslevel")
+     .parquet(output)
 
     //println("-------------- users ------------------")
     //df.groupBy("user_id", "ts").count().where("count > 1").show()
@@ -32,7 +32,7 @@ class ProcessUsersLevelTable(val session: SparkSession) {
 
   }
 
-  def execute(): Unit = {
-    this.createUsersTable()
+  def execute(output: String): Unit ={
+    this.createUsersTable(output)
   }
 }
