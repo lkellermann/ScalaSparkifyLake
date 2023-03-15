@@ -9,8 +9,11 @@ lazy val root = (project in file("."))
 libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-core" % "3.3.2",
   "org.apache.spark" %% "spark-sql" % "3.3.2",
+  "org.apache.hadoop" % "hadoop-client-api" % "3.3.2",
   "org.apache.logging.log4j" % "log4j-api-scala_2.13" % "12.0",
-  "org.apache.logging.log4j" % "log4j-core" % "2.19.0" % Runtime
+  "org.apache.logging.log4j" % "log4j-core" % "2.19.0" % Runtime,
+  "com.typesafe" % "config" % "1.4.1"
+
 )
 
 assemblyMergeStrategy in assembly := {
