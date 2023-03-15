@@ -43,12 +43,25 @@ This project was made using:
 
 ## How execute this project?<a name = "howto"></a>
 
-To execute this project you just run the following commands in the root repository:
+To execute this project you will need the input data available [here](https://drive.google.com/drive/folders/1H6EN9DJlBFNv7w4WQJhOyDMGJujGq-j2?usp=share_link) and download this repository. Put this repository and the `app` input data under the same root
+
+```
+.
+└── some-root/
+    ├── app/
+    │   └── sparkify/
+    │       └── input
+    └── SparkifyLake
+```
+
+After that, just execute the following command at `SparkifyLake` directory:
 
 ```
 sbt compile
 sbt run
 ```
+
+Or open the project with your favorite IDE, build and run!
 
 A successful execution will have the following lines
 
@@ -62,7 +75,7 @@ A successful execution will have the following lines
 
 
 
-## Abuot the data <a name = "data"></a>
+## About the data <a name = "data"></a>
 
 The data we will be working on could be stored stored in two `S3` buckets. Let's pretend that this is what happens here :smile:
 * **Log data**: contains users events on platform and have the following format:
@@ -359,8 +372,6 @@ erDiagram
 |  Start_time  | Datetime at which the session started | String[DateTime] |
 
 ## Technical debts<a name = "debts"></a>
-
-### Decouple input/output from code.
 
 ### Make logs less verbose
 
