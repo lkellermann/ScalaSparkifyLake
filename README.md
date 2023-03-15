@@ -51,10 +51,10 @@ To execute this project you will need the input data available [here](https://dr
     ├── app/
     │   └── sparkify/
     │       └── input
-    └── SparkifyLake
+    └── ScalaSparkifyLake
 ```
 
-After that, just execute the following command at `SparkifyLake` directory:
+After that, just execute the following command at `ScalaSparkifyLake` directory:
 
 ```
 sbt compile
